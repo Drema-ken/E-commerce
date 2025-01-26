@@ -29,7 +29,7 @@ const Topproducts = ({ product: { name, image, price }, key }) => {
           <span className="bg-red-600 group-hover:hidden p-2 md:p-3 my-auto text-center self-end rounded-[50%] text-white cursor-pointer">
             <FaPlus className="text-xs group-hover:hidden " />
           </span>
-          <button className="hidden md:group-hover:block cursor-pointer bg-red-600 md:p-2 hover:text-gray-600 text-white font-bold rounded-lg self-end ">
+          <button className="hidden text-sm md:group-hover:block cursor-pointer bg-red-600 md:p-2 hover:text-gray-600 text-white font-bold rounded-2xl self-end ">
             Add to cart
           </button>
         </div>
