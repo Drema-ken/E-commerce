@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import { setProducts } from "../redux/product-slice";
 import { useDispatch, useSelector } from "react-redux";
 import Topproducts from "../components/Topproducts";
-import deadpool from "../assets/images/deadpool.jpg";
+import customer from "../assets/images/customer.jpg";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -38,9 +38,9 @@ const Home = () => {
         </div>
         <div className="relative w-full md:w-9/12 mt-8 md:mt-0 h-96 ">
           <img
-            src={deadpool}
+            src={customer}
             alt=""
-            className="h-full w-full rounded object-cover "
+            className="h-full w-full rounded object-cover top-100 "
           />
           <div className=" absolute top-16 left-0 text-white px-4">
             <p className="text-white mb-4">Drema - e-Shop</p>
