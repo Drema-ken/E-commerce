@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaSearch, FaShopify, FaShoppingCart, FaUser } from "react-icons/fa";
 import NavDir from "./NavDir";
 
 const Navbar = () => {
   return (
     <nav className="bg-white shadow-md ">
       <div className="container mx-auto px-4 md:px-16 lg:px-24 py-4 flex justify-between">
-        <div className="text-lg font-bold">
-          <Link to="/">e-SHOP</Link>
+        <div className="text-lg font-bold flex gap-1 items-center">
+          <FaShopify className="text-3xl text-red-500" />
+          <Link to="/" className="hidden md:block">
+            e-SHOP
+          </Link>
         </div>
         <div className="relative flex-1 mx-4">
           <form>
@@ -24,8 +27,8 @@ const Navbar = () => {
           <Link to="/cart">
             <FaShoppingCart className="my-3 text-lg"></FaShoppingCart>
           </Link>
-          <button className="hidden md:block"> Login - Register</button>
-          <button className="hidden md:block">
+          <button className="hidden md:block"> Login | Register</button>
+          <button className="block cursor-pointer">
             <FaUser></FaUser>
           </button>
         </div>

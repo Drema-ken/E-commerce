@@ -13,8 +13,8 @@ const Footer = () => {
             the best online shopping experience
           </p>
         </div>
-        <div className=" flex flex-col md:items-center gap-2 p-4">
-          <h1 className="font-bold text-lg">Quick Links</h1>
+        <div className=" hidden md:flex md:flex-col md:items-center gap-2 p-4">
+          <h1 className=" font-bold text-lg">Quick Links</h1>
           <ul className="text-sm space-y-2">
             <li className="">
               <Link className="hover:underline" to="/">
@@ -66,9 +66,16 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" container mx-auto flex justify-between p-3 text-sm">
+      <div className=" container mx-auto flex flex-col md:flex-row justify-between p-3 text-sm">
         <p>&copy;2025 e-Shop. All rights reserved</p>
-        <p>Privacy Policy Terms of service</p>
+        <p className="flex space-x-4 ">
+          <a href="" className="hover:underline">
+            Privacy Policy
+          </a>{" "}
+          <a className="hover:underline" href="">
+            Terms of service
+          </a>
+        </p>
       </div>
     </footer>
   );

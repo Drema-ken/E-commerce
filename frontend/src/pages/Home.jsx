@@ -1,18 +1,28 @@
-import React from "react";
-import { categories } from "../assets/mockData";
+import React, { useEffect } from "react";
+import { categories, mockData } from "../assets/mockData";
 import cench from "../assets/images/cench.jpg";
 import Services from "../components/Services";
 import Gender from "../components/Gender";
 import Footer from "../components/Footer";
+import { setProducts } from "../redux/product-slice";
+import { useDispatch, useSelector } from "react-redux";
+import Topproducts from "../components/Topproducts";
+import deadpool from "../assets/images/deadpool.jpg";
+
 const Home = () => {
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.product);
+  useEffect(() => {
+    dispatch(setProducts(mockData));
+  }, []);
   return (
     <>
       <div className="flex space-x-4 px-4 md:px-16 lg:px-24 py-4 flex-col md:flex-row container mx-auto ">
         <div className=" h-max w-full md:w-3/12 ">
-          <header className="bg-red-500 p-3 text-white text-sm font-bold rounded">
+          <header className="bg-red-500 p-3 text-white text-sm font-bold rounded-t-lg">
             SHOP BY CATEGORIES
           </header>
-          <ul className="bg-gray-100 rounded  ">
+          <ul className="bg-gray-100 rounded-b-lg  ">
             {categories.map((category, index) => {
               return (
                 <li
@@ -27,7 +37,11 @@ const Home = () => {
           </ul>
         </div>
         <div className="relative w-full md:w-9/12 mt-8 md:mt-0 h-96 ">
-          <img src={cench} alt="" className="h-full w-full rounded " />
+          <img
+            src={deadpool}
+            alt=""
+            className="h-full w-full rounded object-cover "
+          />
           <div className=" absolute top-16 left-0 text-white px-4">
             <p className="text-white mb-4">Drema - e-Shop</p>
             <h1 className="text-3xl font-bold">WELCOME TO E-SHOP</h1>
@@ -42,6 +56,14 @@ const Home = () => {
       </div>
       <Services />
       <Gender />
+      <div className="px-4 mb-12 ">
+        <h2 className="font-bold text-center text-xl p-7">Top Products</h2>
+        <div className=" flex items-center gap-3 mx-auto ">
+          {product.products.slice(0, 5).map((item, index) => {
+            return <Topproducts product={item} key={index} />;
+          })}
+        </div>
+      </div>
     </>
   );
 };
