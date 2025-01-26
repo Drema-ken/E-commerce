@@ -8,9 +8,9 @@ const Navbar = () => {
     <nav className="bg-white shadow-md ">
       <div className="container mx-auto px-4 md:px-16 lg:px-24 py-4 flex justify-between">
         <div className="text-lg font-bold flex gap-1 items-center">
-          <FaShopify className="text-3xl text-red-500" />
-          <Link to="/" className="hidden md:block">
-            e-SHOP
+          <Link to="/" className="flex">
+            <FaShopify className="text-3xl text-red-500 cursor-pointer" />
+            <span className="hidden md:block">e-SHOP</span>
           </Link>
         </div>
         <div className="relative flex-1 mx-4">

@@ -56,10 +56,18 @@ const Home = () => {
       </div>
       <Services />
       <Gender />
-      <div className="px-4 mb-12 ">
-        <h2 className="font-bold text-center text-xl p-7">Top Products</h2>
-        <div className=" flex items-center gap-3 mx-auto ">
+      <div className="container mx-auto py-12 ">
+        <h2 className="font-bold text-center text-2xl p-7">Top Products</h2>
+        <div className=" grid grid-cols-1 sm:grid-cols-2 px-5 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {product.products.slice(0, 5).map((item, index) => {
+            return <Topproducts product={item} key={index} />;
+          })}
+        </div>
+      </div>
+      <div className="container mx-auto  px-5 py-12 ">
+        <h2 className="font-bold text-center text-2xl p-7">SHOP</h2>
+        <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {product.products.slice(0, 10).map((item, index) => {
             return <Topproducts product={item} key={index} />;
           })}
         </div>
