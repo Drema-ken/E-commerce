@@ -31,7 +31,7 @@ const Navbar = () => {
           <Link to="/cart" className="relative">
             <FaShoppingCart className="my-3 text-xl"></FaShoppingCart>
             {productsInCart.length > 0 && (
-              <span className="absolute top-0 text-xs w-3 left-3 bg-red-600 rounded-full flex justify-center items-center text-white">
+              <span className="absolute top-1 text-xs w-3 left-3 bg-red-600 rounded-full flex justify-center items-center text-white">
                 {productsInCart.length}
               </span>
             )}

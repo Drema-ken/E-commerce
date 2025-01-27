@@ -14,7 +14,7 @@ const Gender = () => {
       {info.map((item, index) => (
         <div
           key={index}
-          className="shadow-lg  h-64   w-full  relative transform transition-transform duration-300 hover:scale-105  cursor-pointer"
+          className="shadow-lg  h-70  w-full  relative transform transition-transform duration-300 hover:scale-105  cursor-pointer"
         >
           <div className="absolute top-30 left-0 px-16">
             <h2 className="font-bold text-white text-xl ">{item.gender}</h2>

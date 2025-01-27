@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { FaPlus, FaStar } from "react-icons/fa";
-import cench from "../assets/images/cench.jpg";
-import ice from "../assets/images/ice.jpg";
+
 import { addToCart } from "../redux/cart-slice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -17,7 +16,7 @@ const Topproducts = ({ product }) => {
   return (
     <div className="shadow-lg  flex flex-col gap-1 h-full bg-white  w-full  relative    cursor-pointer rounded-md border-2 border-gray-300 transform transition-transform duration-300 hover:scale-105  ">
       <img
-        src={ice}
+        src={product.image}
         className="rounded-md w-full object-cover h-48 mb-4"
         alt=""
       />

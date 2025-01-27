@@ -23,10 +23,15 @@ const cartSlice = createSlice({
           price: newItem.price,
           quantity: 1,
           totalPrice: newItem.price,
+          image: newItem.image,
         });
       }
       state.totalPrice += newItem.price;
       state.totalQuantity++;
+    },
+    removeFromCart(state, action) {
+      const newItemId = action.payload.id;
+      state.products.filter((product) => product.id !== newItemId);
     },
   },
 });

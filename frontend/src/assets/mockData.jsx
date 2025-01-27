@@ -1,3 +1,6 @@
+import macbook from "../assets/images/macbook.jpg";
+import vvs from "../assets/images/vvs.jpg";
+import sonny from "../assets/images/sonny.jpg";
 export const categories = [
   "electronics",
   "fashion",
@@ -8,9 +11,9 @@ export const categories = [
 ];
 
 export const mockData = [
-  { id: 1, image: "", name: "Product 1", price: 29.99 },
-  { id: 2, image: "", name: "Product 2", price: 29.99 },
-  { id: 3, image: "", name: "Product 3", price: 29.99 },
+  { id: 1, image: macbook, name: "Product 1", price: 29.99 },
+  { id: 2, image: sonny, name: "Product 2", price: 29.99 },
+  { id: 3, image: vvs, name: "Product 3", price: 29.99 },
   { id: 4, image: "", name: "Product 4", price: 29.99 },
   { id: 5, image: "", name: "Product 5", price: 29.99 },
   { id: 6, image: "", name: "Product 6", price: 29.99 },

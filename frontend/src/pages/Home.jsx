@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { categories, mockData } from "../assets/mockData";
-import cench from "../assets/images/cench.jpg";
 import Services from "../components/Services";
 import Gender from "../components/Gender";
-import Footer from "../components/Footer";
 import { setProducts } from "../redux/product-slice";
 import { useDispatch, useSelector } from "react-redux";
 import Topproducts from "../components/Topproducts";
