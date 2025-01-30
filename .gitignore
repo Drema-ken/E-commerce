@@ -23,4 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 index.js 
+*.firebase
+firebase.json
+*.firebaserc
 
