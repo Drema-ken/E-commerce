@@ -38,7 +38,7 @@ const Home = () => {
           <img
             src={customer}
             alt=""
-            className="h-full w-full rounded object-cover top-100 "
+            className="h-full w-full rounded object-fit top-100 "
           />
           <div className=" absolute top-16 left-0 text-white px-4">
             <p className="text-white mb-4">Drema - e-Shop</p>

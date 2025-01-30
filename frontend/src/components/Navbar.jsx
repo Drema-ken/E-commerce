@@ -1,12 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaSearch, FaShopify, FaShoppingCart, FaUser } from "react-icons/fa";
 import NavDir from "./NavDir";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
+import Login from "./Login";
+import Register from "./Register";
 
-const Navbar = () => {
+const Navbar = ({ setSearching }) => {
+  const [signup, setSignUp] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const cart = useSelector((state) => state.cart);
+  const product = useSelector((state) => state.product);
   const productsInCart = cart.products;
+  const navigate = useNavigate();
+  const searchProducts = (search) => {
+    const productSearched = product.products.filter((item) =>
+      item.name.toLowerCase().match(search)
+    );
+    navigate("/shop");
+    setSearching(true);
+    console.log(productSearched);
+  };
 
   return (
     <nav className="bg-white shadow-md ">
@@ -36,13 +52,38 @@ const Navbar = () => {
               </span>
             )}
           </Link>
-          <button className="hidden md:block"> Login | Register</button>
-          <button className="block cursor-pointer">
+
+          <button
+            className="hidden md:block cursor-pointer"
+            onClick={() => {
+              setIsModalOpen(true);
+            }}
+          >
+            {" "}
+            Login | Register
+          </button>
+          <button
+            className="block cursor-pointer"
+            onClick={() => {
+              setIsModalOpen(true);
+            }}
+          >
             <FaUser></FaUser>
           </button>
         </div>
       </div>
-
+      <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+        <Register
+          setIsModalOpen={setIsModalOpen}
+          setSignUp={setSignUp}
+          signup={signup}
+        />
+        <Login
+          setIsModalOpen={setIsModalOpen}
+          setSignUp={setSignUp}
+          signup={signup}
+        />
+      </Modal>
       <NavDir />
     </nav>
   );
